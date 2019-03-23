@@ -57,7 +57,7 @@ car
 toothbrush
 ```
 
-### 3.1 train raccoon dataset
+### 3.1 Train raccoon dataset
 To help you understand my training process, I made this training-pipline demo. [raccoon dataset](https://github.com/YunYang1994/raccoon_dataset) has only one class with 200 images (180 for train, 20 for test), I have prepared a shell script in the `./scripts` which enables you to get data and train it !
 #### how to train it ?
 ```
@@ -82,10 +82,11 @@ if you are still unfamiliar with training pipline, you can join [here](https://g
 |---|:---:|
 |![weibo-logo](./docs/images/raccoon1.jpg)|![weibo-logo](./docs/images/raccoon2.jpg)|
 
-### 3.2 train other dataset
-Download VOC-2007 trainval  and test data
+### 3.2 Train other dataset
+Download VOC PASCAL trainval  and test data
 ```bashrc
 $ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+$ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 $ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
 ```
 Download COCO trainval  and test data
@@ -98,7 +99,7 @@ $ wget http://images.cocodataset.org/annotations/image_info_test2017.zip
 
 ## part 4. Why it is so magical ?
 YOLO stands for You Only Look Once. It's an object detector that uses features learned by a deep convolutional neural network to detect an object. Although we has successfully run these codes, we must understand how YOLO works. 
-### 4.1 anchors clustering
+### 4.1 Anchors clustering
 The paper suggests to use clustering on bounding box shape to find the good anchor box specialization suited for the data. more details see [here](https://nbviewer.jupyter.org/github/YunYang1994/tensorflow-yolov3/blob/master/docs/Box-Clustering.ipynb)
 ![image](./docs/images/K-means.png)
 
@@ -117,7 +118,7 @@ The output result may contain several rectangles that are false positives or ove
 
 **Input arguments**: 
 
-- `boxes`: tensor of shape [10647, 4)] 
+- `boxes`: tensor of shape [10647, 4] 
 - `scores`: tensor of shape `[10647, 80]` containing the detection scores for 80 classes. 
 - `score_thresh`: float value , then get rid of whose boxes with low score
 
@@ -147,9 +148,9 @@ Non-max suppression uses the very important function called **"Intersection over
 
 ![image](./docs/images/iou.png)
 
-Hope it helps you, Start your tensorflow-yolv3 journey here now!
+Welecome to discuss with me.
 
-## part 5. Some Other Tutorials
+## part 5. Other Implementations
 
 [- **`YOLOv3_TensorFlow`**](https://github.com/wizyoung/YOLOv3_TensorFlow)
 
